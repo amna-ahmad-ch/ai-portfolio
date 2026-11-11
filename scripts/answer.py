@@ -91,7 +91,7 @@ def enforce(reply: str, chunk_texts: list[str]) -> tuple[str, str | None, str]:
 
 
 @retry(wait=wait_exponential(multiplier=1, min=45, max=120), stop=stop_after_attempt(6), reraise=True)
-def generate(question: str, records: list[dict]) -> str:
+def generate(question: str, records: list[dict], pause: bool = True) -> str:
     context = "\n\n".join(
         f"Chunk {record['rank']} from {record['source_file']}:\n{record['text']}"
         for record in records
@@ -116,7 +116,8 @@ def generate(question: str, records: list[dict]) -> str:
         max_tokens=500,
         extra_body={"reasoning_effort": "low"},
     )
-    llm_chunks.time.sleep(llm_chunks.PAUSE_SECONDS)
+    if pause:
+        llm_chunks.time.sleep(llm_chunks.PAUSE_SECONDS)
     return llm_chunks.message_text(response)
 
 

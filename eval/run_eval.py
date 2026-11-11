@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import keyword_search as search
+import site_page
 
 RESULTS_PATH = ROOT / "eval" / "results.json"
 BASELINE_PATH = ROOT / "eval" / "baseline.json"
@@ -119,6 +120,8 @@ def main() -> None:
     print(f"Cited answers: {answers['in_scope_cited']}/{answers['in_scope_total']}")
     print(f"Refusals: {answers['refusals_kept']}/{answers['refusals_total']}")
     print(f"Wrote {RESULTS_PATH.name}")
+    site_page.build()
+    print("Wrote site/")
     check_baseline(winner)
 
 

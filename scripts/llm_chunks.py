@@ -348,7 +348,7 @@ class RankOrder(BaseModel):
 
 
 @retry(wait=wait_exponential(multiplier=1, min=45, max=120), stop=stop_after_attempt(6), reraise=True)
-def llm_rerank(question: str, chunks: list[dict]) -> list[dict]:
+def llm_rerank(question: str, chunks: list[dict], pause: bool = True) -> list[dict]:
     system_prompt = """
 You are a document re-ranker.
 You are given a question and chunks from a USDA food-safety knowledge base.
@@ -369,7 +369,8 @@ Reply only with the list of ranked chunk ids. Include every chunk id you were gi
         max_tokens=400,
         extra_body={"reasoning_effort": "low"},
     )
-    time.sleep(PAUSE_SECONDS)
+    if pause:
+        time.sleep(PAUSE_SECONDS)
     order = RankOrder.model_validate_json(message_text(response)).order
     ranked = []
     seen = set()
