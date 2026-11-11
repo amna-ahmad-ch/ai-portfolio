@@ -1,0 +1,7 @@
+{
+  "chunking": "llm-chunks",
+  "search": "llm-rerank",
+  "hits": 16,
+  "total": 16,
+  "mrr": 0.964
+}

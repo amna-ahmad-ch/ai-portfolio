@@ -1,0 +1,859 @@
+{
+  "model": "groq/openai/gpt-oss-120b",
+  "answers": [
+    {
+      "question": "What temperature range is called the Danger Zone, and how fast can bacteria double there?",
+      "kind": "in_scope",
+      "reference": "The Danger Zone is 40 \u00b0F to 140 \u00b0F. Bacteria can double in as little as 20 minutes.",
+      "source": "danger-zone.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "danger-zone.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "leftovers-and-food-safety.md"
+        }
+      ],
+      "raw": "Bacteria grow most rapidly in the range of temperatures between 40\u202f\u00b0F and 140\u202f\u00b0F, doubling in number in as little as 20\u202fminutes.",
+      "final": "Bacteria grow most rapidly in the range of temperatures between 40\u202f\u00b0F and 140\u202f\u00b0F, doubling in number in as little as 20\u202fminutes.",
+      "quote": "Bacteria grow most rapidly in the range of temperatures between 40 \u00b0F and 140 \u00b0F, doubling in number in as little as 20 minutes.",
+      "status": "cited"
+    },
+    {
+      "question": "How long can perishable food stay out of the refrigerator?",
+      "kind": "in_scope",
+      "reference": "No more than 2 hours, or 1 hour if the temperature is above 90 \u00b0F.",
+      "source": "danger-zone.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "leftovers-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "freezing-and-food-safety.md"
+        }
+      ],
+      "raw": "Throw away all perishable foods that have been left in room temperature for more than\u202f2\u202fhours (1\u202fhour if the temperature is over\u202f90\u202f\u00b0F, such as at an outdoor picnic during summer).",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "How should you check that a refrigerator is cold enough?",
+      "kind": "in_scope",
+      "reference": "Keep an appliance thermometer in the refrigerator and confirm it stays at 40 \u00b0F or below.",
+      "source": "refrigeration.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "refrigeration.md"
+        }
+      ],
+      "raw": "To verify the fridge is sufficiently cold,\u202f\u201cCheck the refrigerator temperature with an appliance thermometer.\u201d\u3010Chunk\u202f2\u3011",
+      "final": "To verify the fridge is sufficiently cold,\u202f\u201cCheck the refrigerator temperature with an appliance thermometer.\u201d\u3010Chunk\u202f2\u3011",
+      "quote": "Check the refrigerator temperature with an appliance thermometer.",
+      "status": "cited"
+    },
+    {
+      "question": "Is the refrigerator door a good place to store eggs?",
+      "kind": "in_scope",
+      "reference": "No. Do not store perishable food in the door. Keep eggs in the carton on a shelf.",
+      "source": "refrigeration.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "No.\u202f\u201cDon\u2019t store perishable foods in the door.\u202fEggs should be stored in the carton on a shelf.\u201d (Chunk\u202f1)",
+      "final": "No.\u202f\u201cDon\u2019t store perishable foods in the door.\u202fEggs should be stored in the carton on a shelf.\u201d (Chunk\u202f1)",
+      "quote": "Eggs should be stored in the carton on a shelf.",
+      "status": "cited"
+    },
+    {
+      "question": "How long can leftovers stay in the refrigerator and in the freezer?",
+      "kind": "in_scope",
+      "reference": "Refrigerate leftovers for 3 to 4 days, or freeze them for 3 to 4 months.",
+      "source": "leftovers-and-food-safety.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "leftovers-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "Leftovers can be kept in the refrigerator for\u202f3\u202fto\u202f4\u202fdays\u202for\u202ffrozen for\u202f3\u202fto\u202f4\u202fmonths.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "What temperature should leftovers reach when thawed in a microwave?",
+      "kind": "in_scope",
+      "reference": "Heat them until they reach 165 \u00b0F.",
+      "source": "leftovers-and-food-safety.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "leftovers-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "big-thaw.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "big-thaw.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "leftovers-and-food-safety.md"
+        }
+      ],
+      "raw": "When thawing leftovers in a microwave, continue to heat it until it reaches\u202f165\u202f\u00b0F as measured with a food thermometer.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "How often do you change the water when thawing food in cold water?",
+      "kind": "in_scope",
+      "reference": "Submerge the sealed food in cold tap water and change the water every 30 minutes.",
+      "source": "big-thaw.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "big-thaw.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "big-thaw.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "big-thaw.md"
+        }
+      ],
+      "raw": "The water should be changed\u202fevery\u202f30\u202fminutes.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "Does freezer burn make food unsafe to eat?",
+      "kind": "in_scope",
+      "reference": "No. Freezer burn dries the food and leaves grayish-brown spots, but it does not make the food unsafe.",
+      "source": "freezing-and-food-safety.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "big-thaw.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "freezing-and-food-safety.md"
+        }
+      ],
+      "raw": "Freezer burn does not make food unsafe, merely dry in spots.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "After a freezer power cut, when is the food still safe to refreeze?",
+      "kind": "in_scope",
+      "reference": "It is safe if it still has ice crystals or is still as cold as refrigerator temperature, 40 \u00b0F.",
+      "source": "freezing-and-food-safety.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "big-thaw.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "If food is partly frozen, still has ice crystals, or is as cold as if it were in a refrigerator (40\u202f\u00b0F), it is safe to refreeze or use.",
+      "final": "If food is partly frozen, still has ice crystals, or is as cold as if it were in a refrigerator (40\u202f\u00b0F), it is safe to refreeze or use.",
+      "quote": "If food is partly frozen, still has ice crystals, or is as cold as if it were in a refrigerator (40 \u00b0F), it is safe to refreeze or use.",
+      "status": "cited"
+    },
+    {
+      "question": "What internal temperature should ground meats reach?",
+      "kind": "in_scope",
+      "reference": "Ground meats should reach 160 \u00b0F.",
+      "source": "safe-temperature-chart.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "leftovers-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "safe-temperature-chart.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "food-thermometers.md"
+        }
+      ],
+      "raw": "\u201cCook all raw ground beef, pork, lamb, and veal to an internal temperature of 160\u202f\u00b0\u202fF as measured with a food thermometer.\u201d\u3010Chunk\u202f1\u3011",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "What internal temperature should fish and shellfish reach?",
+      "kind": "in_scope",
+      "reference": "Fish and shellfish should reach 145 \u00b0F.",
+      "source": "safe-temperature-chart.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "safe-temperature-chart.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "leftovers-and-food-safety.md"
+        }
+      ],
+      "raw": "\"Fish and Shellfish | 145 degrees\u202fF (62.8 degrees\u202fC)\"\u3010Chunk 2\u3011",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "What internal temperature should a hamburger reach on the grill?",
+      "kind": "in_scope",
+      "reference": "Hamburgers made from ground beef, pork, veal, or lamb should reach 160 \u00b0F.",
+      "source": "grilling-and-food-safety.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "safe-temperature-chart.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "Hamburgers made of ground beef, pork, veal, and lamb should reach\u202f160\u202f\u00b0F.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "How long should food stand after microwave cooking before you check the temperature?",
+      "kind": "in_scope",
+      "reference": "Let it stand for at least 3 minutes, then check the temperature.",
+      "source": "cooking-with-microwave-ovens.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "how-temperatures-affect-food.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "leftovers-and-food-safety.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "cooking-with-microwave-ovens.md"
+        }
+      ],
+      "raw": "After removing food from the microwave, always allow standing time of at least 3 minutes. This completes the cooking process. Then check the internal temperature with a food thermometer.",
+      "final": "After removing food from the microwave, always allow standing time of at least 3 minutes. This completes the cooking process. Then check the internal temperature with a food thermometer.",
+      "quote": "Then check the internal temperature with a food thermometer.",
+      "status": "cited"
+    },
+    {
+      "question": "How do you sanitize a cutting board with bleach?",
+      "kind": "in_scope",
+      "reference": "Use 1 tablespoon of unscented liquid chlorine bleach per gallon of water, flood the board, let it stand, then rinse.",
+      "source": "cutting-boards.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "cutting-boards.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "cutting-boards.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "grilling-and-food-safety.md"
+        }
+      ],
+      "raw": "Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water. Flood the surface with the bleach solution and allow it to stand for several minutes. Rinse with clear water and air dry or pat dry with clean paper towels.",
+      "final": "Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water. Flood the surface with the bleach solution and allow it to stand for several minutes. Rinse with clear water and air dry or pat dry with clean paper towels.",
+      "quote": "Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water.",
+      "status": "cited"
+    },
+    {
+      "question": "Can you tell meat is safe by its color?",
+      "kind": "in_scope",
+      "reference": "No. Color is not a reliable sign that food is safe. Use a food thermometer.",
+      "source": "food-thermometers.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "\u201cColor and grill marks are not indicators that food is safe to eat and could put you at risk for foodborne illness if dangerous bacteria are still present in your food.\u201d",
+      "final": "\u201cColor and grill marks are not indicators that food is safe to eat and could put you at risk for foodborne illness if dangerous bacteria are still present in your food.\u201d",
+      "quote": "Color and grill marks are not indicators that food is safe to eat and could put you at risk for foodborne illness if dangerous bacteria are still present in your food.",
+      "status": "cited"
+    },
+    {
+      "question": "How do I stop water from erupting after I microwave it?",
+      "kind": "in_scope",
+      "reference": "Use a cup with sloping walls and leave a microwavable spoon in the water while it heats. Stir, or add a pinch of instant coffee, a tea bag, or gelatin partway through.",
+      "source": "cooking-with-microwave-ovens.md",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "cooking-with-microwave-ovens.md"
+        }
+      ],
+      "raw": "\u201cUse a vessel with sloping walls, such as a measuring cup.\u201d",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "rejected"
+    },
+    {
+      "question": "What dose of ibuprofen should an adult take for a headache?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "food-thermometers.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "Which Samsung refrigerator has the best energy rating?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "refrigeration.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "What is the capital of France?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "refrigeration.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "How do I deduct a home office on a US tax return?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "cooking-with-microwave-ovens.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "cutting-boards.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "Is chocolate safe for dogs?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "safe-temperature-chart.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "Is honey safe for a baby under 12 months?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "freezing-and-food-safety.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "safe-temperature-chart.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "danger-zone.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "Should I rinse raw chicken in the sink before cooking it?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "cutting-boards.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "A block of cheddar has one spot of mold. Can I cut the mold off and eat the rest?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "cutting-boards.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "cutting-boards.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "What are the nine major food allergens that must be listed on a package?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "food-thermometers.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    },
+    {
+      "question": "On raw chicken, what is the difference between a sell-by date and a use-by date?",
+      "kind": "refusal",
+      "reference": "refuse",
+      "source": "",
+      "chunks": [
+        {
+          "rank": 1,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 2,
+          "source_file": "refrigeration.md"
+        },
+        {
+          "rank": 3,
+          "source_file": "grilling-and-food-safety.md"
+        },
+        {
+          "rank": 4,
+          "source_file": "steps-to-keep-food-safe.md"
+        },
+        {
+          "rank": 5,
+          "source_file": "steps-to-keep-food-safe.md"
+        }
+      ],
+      "raw": "I don't know based on these documents.",
+      "final": "I don't know based on these documents.",
+      "quote": null,
+      "status": "refused"
+    }
+  ],
+  "summary": {
+    "in_scope": {
+      "kept": 7,
+      "total": 16,
+      "misses": [
+        "How long can perishable food stay out of the refrigerator?",
+        "How long can leftovers stay in the refrigerator and in the freezer?",
+        "What temperature should leftovers reach when thawed in a microwave?",
+        "How often do you change the water when thawing food in cold water?",
+        "Does freezer burn make food unsafe to eat?",
+        "What internal temperature should ground meats reach?",
+        "What internal temperature should fish and shellfish reach?",
+        "What internal temperature should a hamburger reach on the grill?",
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    "refusals": {
+      "kept": 10,
+      "total": 10,
+      "misses": []
+    }
+  }
+}

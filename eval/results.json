@@ -1,0 +1,198 @@
+{
+  "questions": 16,
+  "rows": [
+    {
+      "chunking": "character-500",
+      "search": "bm25",
+      "hits": 11,
+      "total": 16,
+      "mrr": 0.59,
+      "misses": [
+        "How long can perishable food stay out of the refrigerator?",
+        "What internal temperature should fish and shellfish reach?",
+        "How long should food stand after microwave cooking before you check the temperature?",
+        "Can you tell meat is safe by its color?",
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    {
+      "chunking": "character-500",
+      "search": "vector",
+      "hits": 14,
+      "total": 16,
+      "mrr": 0.724,
+      "misses": [
+        "What internal temperature should ground meats reach?",
+        "How long should food stand after microwave cooking before you check the temperature?"
+      ]
+    },
+    {
+      "chunking": "character-500",
+      "search": "hybrid",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.724,
+      "misses": [
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    {
+      "chunking": "character-500",
+      "search": "hybrid-rerank",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.807,
+      "misses": [
+        "What internal temperature should ground meats reach?"
+      ]
+    },
+    {
+      "chunking": "character-1000",
+      "search": "bm25",
+      "hits": 10,
+      "total": 16,
+      "mrr": 0.575,
+      "misses": [
+        "How long can perishable food stay out of the refrigerator?",
+        "What internal temperature should ground meats reach?",
+        "What internal temperature should fish and shellfish reach?",
+        "How long should food stand after microwave cooking before you check the temperature?",
+        "Can you tell meat is safe by its color?",
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    {
+      "chunking": "character-1000",
+      "search": "vector",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.744,
+      "misses": [
+        "What internal temperature should ground meats reach?"
+      ]
+    },
+    {
+      "chunking": "character-1000",
+      "search": "hybrid",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.704,
+      "misses": [
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    {
+      "chunking": "character-1000",
+      "search": "hybrid-rerank",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.859,
+      "misses": [
+        "What internal temperature should ground meats reach?"
+      ]
+    },
+    {
+      "chunking": "section",
+      "search": "bm25",
+      "hits": 12,
+      "total": 16,
+      "mrr": 0.604,
+      "misses": [
+        "How long can perishable food stay out of the refrigerator?",
+        "What internal temperature should fish and shellfish reach?",
+        "How long should food stand after microwave cooking before you check the temperature?",
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    {
+      "chunking": "section",
+      "search": "vector",
+      "hits": 14,
+      "total": 16,
+      "mrr": 0.792,
+      "misses": [
+        "What internal temperature should ground meats reach?",
+        "How long should food stand after microwave cooking before you check the temperature?"
+      ]
+    },
+    {
+      "chunking": "section",
+      "search": "hybrid",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.728,
+      "misses": [
+        "How do I stop water from erupting after I microwave it?"
+      ]
+    },
+    {
+      "chunking": "section",
+      "search": "hybrid-rerank",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.854,
+      "misses": [
+        "What internal temperature should ground meats reach?"
+      ]
+    },
+    {
+      "chunking": "llm-chunks",
+      "search": "bm25",
+      "hits": 15,
+      "total": 16,
+      "mrr": 0.792,
+      "misses": [
+        "What internal temperature should ground meats reach?"
+      ]
+    },
+    {
+      "chunking": "llm-chunks",
+      "search": "vector",
+      "hits": 16,
+      "total": 16,
+      "mrr": 0.886,
+      "misses": []
+    },
+    {
+      "chunking": "llm-chunks",
+      "search": "hybrid",
+      "hits": 16,
+      "total": 16,
+      "mrr": 0.881,
+      "misses": []
+    },
+    {
+      "chunking": "llm-chunks",
+      "search": "llm-rerank",
+      "hits": 16,
+      "total": 16,
+      "mrr": 0.964,
+      "misses": []
+    }
+  ],
+  "answers": {
+    "in_scope_cited": 7,
+    "in_scope_total": 16,
+    "in_scope_misses": [
+      "How long can perishable food stay out of the refrigerator?",
+      "How long can leftovers stay in the refrigerator and in the freezer?",
+      "What temperature should leftovers reach when thawed in a microwave?",
+      "How often do you change the water when thawing food in cold water?",
+      "Does freezer burn make food unsafe to eat?",
+      "What internal temperature should ground meats reach?",
+      "What internal temperature should fish and shellfish reach?",
+      "What internal temperature should a hamburger reach on the grill?",
+      "How do I stop water from erupting after I microwave it?"
+    ],
+    "refusals_kept": 10,
+    "refusals_total": 10,
+    "refusal_misses": []
+  },
+  "winner": {
+    "chunking": "llm-chunks",
+    "search": "llm-rerank",
+    "hits": 16,
+    "total": 16,
+    "mrr": 0.964
+  }
+}
