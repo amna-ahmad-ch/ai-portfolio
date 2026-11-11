@@ -8,55 +8,53 @@
   <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
+  <header class="bar">
+    <a class="brand" href="../../">Amna Ahmad</a>
+    <nav>
+      <a href="../../">Projects</a>
+      <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
+    </nav>
+  </header>
   <main>
-    <header>
-      <p class="eyebrow"><a href="../../">Amna Ahmad</a></p>
-      <h1>Ask My Docs</h1>
-      <p class="lede">Twelve public-domain food-safety sheets, searched sixteen ways. The table is the saved evaluation. The winner is LLM chunks reranked by Groq. These are US rules.</p>
-    </header>
+    <h1>Ask My Docs</h1>
+    <p class="lede">Twelve public-domain food-safety sheets, searched sixteen ways. The winner is LLM chunks reranked by Groq. These are US rules.</p>
 
     
-    <section class="panel">
-      <h2>Ask on this computer</h2>
-      <p class="note">This page shows the saved evaluation. A new question loads a local embedding model and keeps the API key on the server, so the ask box is not published here.</p>
-      <p><code>uv run python app.py</code></p>
-      <p class="note">Then open http://127.0.0.1:8765/projects/ask-my-docs/</p>
-    </section>
+    <aside class="local-note">
+      <p>This page is the saved evaluation. A new question needs the local embedding model, so the ask box stays on your computer.</p>
+      <code>uv run python app.py</code>
+    </aside>
 
 
     <section>
       <h2>Retrieval comparison</h2>
-      <p class="note">Cited answers kept 7 of 16 in-scope replies. Refusals held on 10 of 10.</p>
-      <div class="panel table-wrap">
+      <p class="note">Cited answers kept 7 of 16 in-scope replies. Refusals held on 10 of 10. A judge scored those shipped answers 2.62 for accuracy, 2.50 for completeness, and 2.69 for relevance, out of 5.</p>
+      <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Chunks</th><th>Search</th><th>Hits</th><th>MRR</th></tr>
+            <tr><th>Chunks</th><th>Search</th><th class="num">Hits</th><th class="num">MRR</th></tr>
           </thead>
           <tbody>
-            <tr class=""><td>character-500</td><td>BM25</td><td>11/16</td><td>0.590</td></tr>
-<tr class=""><td>character-500</td><td>Vector</td><td>14/16</td><td>0.724</td></tr>
-<tr class=""><td>character-500</td><td>Hybrid</td><td>15/16</td><td>0.724</td></tr>
-<tr class=""><td>character-500</td><td>Cross-encoder</td><td>15/16</td><td>0.807</td></tr>
-<tr class=""><td>character-1000</td><td>BM25</td><td>10/16</td><td>0.575</td></tr>
-<tr class=""><td>character-1000</td><td>Vector</td><td>15/16</td><td>0.744</td></tr>
-<tr class=""><td>character-1000</td><td>Hybrid</td><td>15/16</td><td>0.704</td></tr>
-<tr class=""><td>character-1000</td><td>Cross-encoder</td><td>15/16</td><td>0.859</td></tr>
-<tr class=""><td>section</td><td>BM25</td><td>12/16</td><td>0.604</td></tr>
-<tr class=""><td>section</td><td>Vector</td><td>14/16</td><td>0.792</td></tr>
-<tr class=""><td>section</td><td>Hybrid</td><td>15/16</td><td>0.728</td></tr>
-<tr class=""><td>section</td><td>Cross-encoder</td><td>15/16</td><td>0.854</td></tr>
-<tr class=""><td>llm-chunks</td><td>BM25</td><td>15/16</td><td>0.792</td></tr>
-<tr class=""><td>llm-chunks</td><td>Vector</td><td>16/16</td><td>0.886</td></tr>
-<tr class=""><td>llm-chunks</td><td>Hybrid</td><td>16/16</td><td>0.881</td></tr>
-<tr class="winner"><td>llm-chunks</td><td>Groq rerank<span class="tag">Winner</span></td><td>16/16</td><td>0.964</td></tr>
+            <tr class=""><td>character-500</td><td>BM25</td><td class="num">11/16</td><td class="num">0.590</td></tr>
+<tr class=""><td>character-500</td><td>Vector</td><td class="num">14/16</td><td class="num">0.724</td></tr>
+<tr class=""><td>character-500</td><td>Hybrid</td><td class="num">15/16</td><td class="num">0.724</td></tr>
+<tr class=""><td>character-500</td><td>Cross-encoder</td><td class="num">15/16</td><td class="num">0.807</td></tr>
+<tr class=""><td>character-1000</td><td>BM25</td><td class="num">10/16</td><td class="num">0.575</td></tr>
+<tr class=""><td>character-1000</td><td>Vector</td><td class="num">15/16</td><td class="num">0.744</td></tr>
+<tr class=""><td>character-1000</td><td>Hybrid</td><td class="num">15/16</td><td class="num">0.704</td></tr>
+<tr class=""><td>character-1000</td><td>Cross-encoder</td><td class="num">15/16</td><td class="num">0.859</td></tr>
+<tr class=""><td>section</td><td>BM25</td><td class="num">12/16</td><td class="num">0.604</td></tr>
+<tr class=""><td>section</td><td>Vector</td><td class="num">14/16</td><td class="num">0.792</td></tr>
+<tr class=""><td>section</td><td>Hybrid</td><td class="num">15/16</td><td class="num">0.728</td></tr>
+<tr class=""><td>section</td><td>Cross-encoder</td><td class="num">15/16</td><td class="num">0.854</td></tr>
+<tr class=""><td>llm-chunks</td><td>BM25</td><td class="num">15/16</td><td class="num">0.792</td></tr>
+<tr class=""><td>llm-chunks</td><td>Vector</td><td class="num">16/16</td><td class="num">0.886</td></tr>
+<tr class=""><td>llm-chunks</td><td>Hybrid</td><td class="num">16/16</td><td class="num">0.881</td></tr>
+<tr class="winner"><td>llm-chunks</td><td>Groq rerank<span class="tag">Winner</span></td><td class="num">16/16</td><td class="num">0.964</td></tr>
           </tbody>
         </table>
       </div>
     </section>
-    <footer>
-      <a href="../../">All projects</a>
-      <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
-    </footer>
   </main>
 </body>
 </html>

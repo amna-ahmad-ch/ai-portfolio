@@ -31,7 +31,13 @@
       "raw": "Bacteria grow most rapidly in the range of temperatures between 40\u202f\u00b0F and 140\u202f\u00b0F, doubling in number in as little as 20\u202fminutes.",
       "final": "Bacteria grow most rapidly in the range of temperatures between 40\u202f\u00b0F and 140\u202f\u00b0F, doubling in number in as little as 20\u202fminutes.",
       "quote": "Bacteria grow most rapidly in the range of temperatures between 40 \u00b0F and 140 \u00b0F, doubling in number in as little as 20 minutes.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The answer exactly matches the reference: it states the Danger Zone as 40\u202f\u00b0F to 140\u202f\u00b0F and notes bacteria can double in as little as 20\u202fminutes. No facts are missing or incorrect, and it directly answers the question without extra information."
+      }
     },
     {
       "question": "How long can perishable food stay out of the refrigerator?",
@@ -63,7 +69,13 @@
       "raw": "Throw away all perishable foods that have been left in room temperature for more than\u202f2\u202fhours (1\u202fhour if the temperature is over\u202f90\u202f\u00b0F, such as at an outdoor picnic during summer).",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer does not provide any of the factual information from the reference answer (2 hours, or 1 hour above 90\u202f\u00b0F). It is incorrect, incomplete, and does not answer the question."
+      }
     },
     {
       "question": "How should you check that a refrigerator is cold enough?",
@@ -95,7 +107,13 @@
       "raw": "To verify the fridge is sufficiently cold,\u202f\u201cCheck the refrigerator temperature with an appliance thermometer.\u201d\u3010Chunk\u202f2\u3011",
       "final": "To verify the fridge is sufficiently cold,\u202f\u201cCheck the refrigerator temperature with an appliance thermometer.\u201d\u3010Chunk\u202f2\u3011",
       "quote": "Check the refrigerator temperature with an appliance thermometer.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 4.0,
+        "completeness": 3.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer correctly mentions using an appliance thermometer to check the fridge temperature, which aligns with the reference. However, it omits the specific criterion of 40\u202f\u00b0F or below, so it is not fully complete. It stays on topic and does not add unrelated information."
+      }
     },
     {
       "question": "Is the refrigerator door a good place to store eggs?",
@@ -127,7 +145,13 @@
       "raw": "No.\u202f\u201cDon\u2019t store perishable foods in the door.\u202fEggs should be stored in the carton on a shelf.\u201d (Chunk\u202f1)",
       "final": "No.\u202f\u201cDon\u2019t store perishable foods in the door.\u202fEggs should be stored in the carton on a shelf.\u201d (Chunk\u202f1)",
       "quote": "Eggs should be stored in the carton on a shelf.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference: it states that eggs should not be stored in the refrigerator door and should be kept in the carton on a shelf. No factual errors, missing points, or extraneous information are present."
+      }
     },
     {
       "question": "How long can leftovers stay in the refrigerator and in the freezer?",
@@ -159,7 +183,13 @@
       "raw": "Leftovers can be kept in the refrigerator for\u202f3\u202fto\u202f4\u202fdays\u202for\u202ffrozen for\u202f3\u202fto\u202f4\u202fmonths.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer does not provide the factual information from the reference (3-4 days in refrigerator, 3-4 months in freezer). It is incorrect, missing all required details, and does not answer the question."
+      }
     },
     {
       "question": "What temperature should leftovers reach when thawed in a microwave?",
@@ -191,7 +221,13 @@
       "raw": "When thawing leftovers in a microwave, continue to heat it until it reaches\u202f165\u202f\u00b0F as measured with a food thermometer.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer states ignorance, whereas the reference answer specifies that leftovers should be heated to 165\u202f\u00b0F. This is factually incorrect, omits the required temperature, and does not answer the question at all."
+      }
     },
     {
       "question": "How often do you change the water when thawing food in cold water?",
@@ -223,7 +259,13 @@
       "raw": "The water should be changed\u202fevery\u202f30\u202fminutes.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer does not provide the correct information. The reference answer specifies submerging the food in cold water and changing the water every 30 minutes. The response \"I don't know based on these documents\" is factually incorrect, omits all required details, and does not answer the question at all."
+      }
     },
     {
       "question": "Does freezer burn make food unsafe to eat?",
@@ -255,7 +297,13 @@
       "raw": "Freezer burn does not make food unsafe, merely dry in spots.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer states uncertainty and does not provide the factual information that freezer burn does not make food unsafe. This contradicts the reference answer, omits all key points, and fails to address the question directly."
+      }
     },
     {
       "question": "After a freezer power cut, when is the food still safe to refreeze?",
@@ -287,7 +335,13 @@
       "raw": "If food is partly frozen, still has ice crystals, or is as cold as if it were in a refrigerator (40\u202f\u00b0F), it is safe to refreeze or use.",
       "final": "If food is partly frozen, still has ice crystals, or is as cold as if it were in a refrigerator (40\u202f\u00b0F), it is safe to refreeze or use.",
       "quote": "If food is partly frozen, still has ice crystals, or is as cold as if it were in a refrigerator (40 \u00b0F), it is safe to refreeze or use.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer correctly states that food is safe to refreeze if it still has ice crystals or is as cold as refrigerator temperature (40\u202f\u00b0F). It includes all the reference facts and adds a synonymous phrase (\u201cpartly frozen\u201d) without introducing errors or irrelevant information."
+      }
     },
     {
       "question": "What internal temperature should ground meats reach?",
@@ -319,7 +373,13 @@
       "raw": "\u201cCook all raw ground beef, pork, lamb, and veal to an internal temperature of 160\u202f\u00b0\u202fF as measured with a food thermometer.\u201d\u3010Chunk\u202f1\u3011",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer does not provide the required temperature (160\u202f\u00b0F) and instead claims ignorance, which is factually incorrect, missing the key information entirely, and does not answer the question."
+      }
     },
     {
       "question": "What internal temperature should fish and shellfish reach?",
@@ -351,7 +411,13 @@
       "raw": "\"Fish and Shellfish | 145 degrees\u202fF (62.8 degrees\u202fC)\"\u3010Chunk 2\u3011",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer states uncertainty and provides no temperature value, which contradicts the reference answer that specifies 145\u202f\u00b0F. It fails to address the question entirely, missing the key fact and offering no relevant information."
+      }
     },
     {
       "question": "What internal temperature should a hamburger reach on the grill?",
@@ -383,7 +449,13 @@
       "raw": "Hamburgers made of ground beef, pork, veal, and lamb should reach\u202f160\u202f\u00b0F.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer does not provide the required temperature (160\u202f\u00b0F) and instead states lack of knowledge, which is factually incorrect, incomplete, and does not answer the question."
+      }
     },
     {
       "question": "How long should food stand after microwave cooking before you check the temperature?",
@@ -415,7 +487,13 @@
       "raw": "After removing food from the microwave, always allow standing time of at least 3 minutes. This completes the cooking process. Then check the internal temperature with a food thermometer.",
       "final": "After removing food from the microwave, always allow standing time of at least 3 minutes. This completes the cooking process. Then check the internal temperature with a food thermometer.",
       "quote": "Then check the internal temperature with a food thermometer.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer correctly states the required standing time of at least 3 minutes and the subsequent temperature check, matching the reference. It includes all the essential information and adds only a minor clarification about using a thermometer, which does not detract from answering the question."
+      }
     },
     {
       "question": "How do you sanitize a cutting board with bleach?",
@@ -447,7 +525,13 @@
       "raw": "Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water. Flood the surface with the bleach solution and allow it to stand for several minutes. Rinse with clear water and air dry or pat dry with clean paper towels.",
       "final": "Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water. Flood the surface with the bleach solution and allow it to stand for several minutes. Rinse with clear water and air dry or pat dry with clean paper towels.",
       "quote": "Both wooden and plastic cutting boards can be sanitized with a solution of 1 tablespoon of unscented, liquid chlorine bleach per gallon of water.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The answer correctly states the bleach-to-water ratio, the flooding step, the standing time, and the rinse, matching the reference. It includes only minor extra detail (drying) that does not contradict or detract from the core instructions."
+      }
     },
     {
       "question": "Can you tell meat is safe by its color?",
@@ -479,7 +563,13 @@
       "raw": "\u201cColor and grill marks are not indicators that food is safe to eat and could put you at risk for foodborne illness if dangerous bacteria are still present in your food.\u201d",
       "final": "\u201cColor and grill marks are not indicators that food is safe to eat and could put you at risk for foodborne illness if dangerous bacteria are still present in your food.\u201d",
       "quote": "Color and grill marks are not indicators that food is safe to eat and could put you at risk for foodborne illness if dangerous bacteria are still present in your food.",
-      "status": "cited"
+      "status": "cited",
+      "judge": {
+        "accuracy": 4.0,
+        "completeness": 3.0,
+        "relevance": 4.0,
+        "feedback": "The answer correctly states that color is not a reliable indicator of safety, matching the reference. However, it does not mention using a food thermometer, which is part of the reference answer, so it is not fully complete. It stays on topic but adds extra commentary about grill marks that isn\u2019t required."
+      }
     },
     {
       "question": "How do I stop water from erupting after I microwave it?",
@@ -511,7 +601,13 @@
       "raw": "\u201cUse a vessel with sloping walls, such as a measuring cup.\u201d",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "rejected"
+      "status": "rejected",
+      "judge": {
+        "accuracy": 1.0,
+        "completeness": 1.0,
+        "relevance": 1.0,
+        "feedback": "The generated answer does not provide any of the information from the reference answer. It states uncertainty instead of offering the suggested solutions (sloping-walled cup, spoon, stirring, adding coffee/tea/gelatin). Therefore it is factually incorrect, incomplete, and irrelevant to the question."
+      }
     },
     {
       "question": "What dose of ibuprofen should an adult take for a headache?",
@@ -543,7 +639,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, stating 'I don't know based on these documents.' No discrepancies or missing information."
+      }
     },
     {
       "question": "Which Samsung refrigerator has the best energy rating?",
@@ -575,7 +677,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer ('I don\u2019t know based on these documents.') and includes no extra information, fulfilling the question perfectly."
+      }
     },
     {
       "question": "What is the capital of France?",
@@ -607,7 +715,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, providing the same statement with no additional or missing information. It is factually correct, fully complete, and directly addresses the question without extra content."
+      }
     },
     {
       "question": "How do I deduct a home office on a US tax return?",
@@ -639,7 +753,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, providing the same statement. No discrepancies or missing information."
+      }
     },
     {
       "question": "Is chocolate safe for dogs?",
@@ -671,7 +791,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, providing the same response with no deviation. It is fully accurate, complete, and directly addresses the question without extra information."
+      }
     },
     {
       "question": "Is honey safe for a baby under 12 months?",
@@ -703,7 +829,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, stating \"I don't know based on these documents.\" No discrepancies or missing information."
+      }
     },
     {
       "question": "Should I rinse raw chicken in the sink before cooking it?",
@@ -735,7 +867,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer ('I don't know based on these documents.') with no deviations, covering the same content fully and directly."
+      }
     },
     {
       "question": "A block of cheddar has one spot of mold. Can I cut the mold off and eat the rest?",
@@ -767,7 +905,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, providing the same concise response without any deviation."
+      }
     },
     {
       "question": "What are the nine major food allergens that must be listed on a package?",
@@ -799,7 +943,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer, providing the same response. No discrepancies in fact, coverage, or relevance."
+      }
     },
     {
       "question": "On raw chicken, what is the difference between a sell-by date and a use-by date?",
@@ -831,7 +981,13 @@
       "raw": "I don't know based on these documents.",
       "final": "I don't know based on these documents.",
       "quote": null,
-      "status": "refused"
+      "status": "refused",
+      "judge": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "feedback": "The generated answer exactly matches the reference answer ('I don\u2019t know based on these documents'), providing the same content with no deviations. All required elements are present and correct."
+      }
     }
   ],
   "summary": {
@@ -854,6 +1010,20 @@
       "kept": 10,
       "total": 10,
       "misses": []
+    },
+    "judge": {
+      "in_scope": {
+        "accuracy": 2.62,
+        "completeness": 2.5,
+        "relevance": 2.69,
+        "count": 16
+      },
+      "refusal": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "count": 10
+      }
     }
   }
 }

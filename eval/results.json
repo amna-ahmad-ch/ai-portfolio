@@ -186,7 +186,21 @@
     ],
     "refusals_kept": 10,
     "refusals_total": 10,
-    "refusal_misses": []
+    "refusal_misses": [],
+    "judge": {
+      "in_scope": {
+        "accuracy": 2.62,
+        "completeness": 2.5,
+        "relevance": 2.69,
+        "count": 16
+      },
+      "refusal": {
+        "accuracy": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "count": 10
+      }
+    }
   },
   "winner": {
     "chunking": "llm-chunks",

@@ -1,13 +1,16 @@
-"""Local portfolio server.
+"""Portfolio server for this computer and for Render.
 
 The home page lists projects. Ask My Docs is served with the ask box.
-A question is answered by the locked winner only: Groq rerank over the
-LLM chunks, then the citation check. The Groq key stays in .env.
+A question uses hybrid search over the LLM chunks. Keyword rank and
+OpenAI vectors are fused, Groq writes the reply, and the citation check
+keeps or replaces it.
 
     uv run python app.py
 """
 
 import json
+import os
+import re
 import sys
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -16,14 +19,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import answer
-import llm_chunks
+import hosted
 import site_page
 
 SITE = ROOT / "site"
 QUESTION_LIMIT = 5
-HOST = "127.0.0.1"
-PORT = 8765
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", "8765"))
 PROJECT_PATHS = {
     "/projects/ask-my-docs",
     "/projects/ask-my-docs/",
@@ -35,9 +37,10 @@ CONTENT_TYPES = {
     ".js": "text/javascript; charset=utf-8",
     ".svg": "image/svg+xml",
     ".png": "image/png",
+    ".woff2": "font/woff2",
 }
 
-store = None
+index = None
 counts: dict[str, int] = {}
 ask_lock = threading.Lock()
 
@@ -55,16 +58,14 @@ def site_file(url_path: str) -> Path | None:
 
 
 def answer_question(question: str) -> dict:
-    pool = llm_chunks.vector_search(store, question, llm_chunks.CANDIDATES)
-    ranked = llm_chunks.llm_rerank(question, pool, pause=False)
-    records = llm_chunks.ranked_records(ranked)
-    raw = answer.generate(question, records, pause=False)
-    final, quote, _status = answer.enforce(raw, [record["text"] for record in records])
-    return {
-        "answer": final,
-        "quote": quote,
-        "sources": [{"rank": record["rank"], "source": record["source_file"]} for record in records],
-    }
+    return hosted.answer_question(index, question)
+
+
+def visitor_address(handler: BaseHTTPRequestHandler) -> str:
+    forwarded = handler.headers.get("X-Forwarded-For", "")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return handler.client_address[0]
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -112,7 +113,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(400, {"error": "Keep the question under 400 characters."})
             return
 
-        visitor = self.client_address[0]
+        visitor = visitor_address(self)
         used = counts.get(visitor, 0)
         if used >= QUESTION_LIMIT:
             self.send_json(429, {"error": "Five questions are the limit from this browser.", "remaining": 0})
@@ -121,7 +122,9 @@ class Handler(BaseHTTPRequestHandler):
         try:
             with ask_lock:
                 result = answer_question(question)
-        except Exception:
+        except Exception as exc:
+            detail = re.sub(r"(gsk_|sk-)[A-Za-z0-9_\-]+", "[redacted]", str(exc))
+            print(f"ask failed: {type(exc).__name__}: {detail[:300]}", flush=True)
             self.send_json(502, {"error": "The model did not answer. Try once more in a minute.", "remaining": QUESTION_LIMIT - used})
             return
 
@@ -131,11 +134,11 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main() -> None:
-    global store
-    llm_chunks.require_key()
-    store = llm_chunks.open_store()
+    global index
+    hosted.require_key()
+    index = hosted.Index()
     server = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"Portfolio at http://{HOST}:{PORT}", flush=True)
+    print(f"Portfolio at http://127.0.0.1:{PORT}", flush=True)
     server.serve_forever()
 
 

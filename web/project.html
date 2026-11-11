@@ -7,22 +7,26 @@
   <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
+  <header class="bar">
+    <a class="brand" href="../../">Amna Ahmad</a>
+    <nav>
+      <a href="../../">Projects</a>
+      <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
+    </nav>
+  </header>
   <main>
-    <header>
-      <p class="eyebrow"><a href="../../">Amna Ahmad</a></p>
-      <h1>Ask My Docs</h1>
-      <p class="lede">Twelve public-domain food-safety sheets, searched sixteen ways. The table is the saved evaluation. The winner is LLM chunks reranked by Groq. These are US rules.</p>
-    </header>
+    <h1>Ask My Docs</h1>
+    <p class="lede">Twelve public-domain food-safety sheets, searched sixteen ways. The winner is LLM chunks reranked by Groq. These are US rules.</p>
 
     {{ask}}
 
     <section>
       <h2>Retrieval comparison</h2>
       <p class="note">{{stats}}</p>
-      <div class="panel table-wrap">
+      <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Chunks</th><th>Search</th><th>Hits</th><th>MRR</th></tr>
+            <tr><th>Chunks</th><th>Search</th><th class="num">Hits</th><th class="num">MRR</th></tr>
           </thead>
           <tbody>
             {{rows}}
@@ -30,10 +34,6 @@
         </table>
       </div>
     </section>
-    <footer>
-      <a href="../../">All projects</a>
-      <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
-    </footer>
   </main>
 </body>
 </html>

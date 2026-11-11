@@ -27,8 +27,8 @@ SEARCH_LABELS = {
 
 LOCAL_ASK = """
     <section class="panel">
-      <h2>Ask the winner</h2>
-      <p class="note">Five questions are allowed from this browser. If the sheets do not contain the answer, the reply stays “I don’t know based on these documents.”</p>
+      <h2>Ask the sheets</h2>
+      <p class="note">Keyword rank and OpenAI vector rank are fused. Groq writes the answer from those chunks. Five questions are allowed from this browser. If the sheets do not contain the answer, the reply stays “I don’t know based on these documents.”</p>
       <form id="ask">
         <label for="question">Question</label>
         <textarea id="question" name="question" maxlength="400" placeholder="How long can leftovers stay in the refrigerator?"></textarea>
@@ -87,12 +87,10 @@ LOCAL_ASK = """
 """
 
 PUBLIC_ASK = """
-    <section class="panel">
-      <h2>Ask on this computer</h2>
-      <p class="note">This page shows the saved evaluation. A new question loads a local embedding model and keeps the API key on the server, so the ask box is not published here.</p>
-      <p><code>uv run python app.py</code></p>
-      <p class="note">Then open http://127.0.0.1:8765/projects/ask-my-docs/</p>
-    </section>
+    <aside class="local-note">
+      <p>This page is the saved evaluation. A new question needs the local embedding model, so the ask box stays on your computer.</p>
+      <code>uv run python app.py</code>
+    </aside>
 """
 
 
@@ -111,8 +109,8 @@ def table_rows(saved: dict) -> str:
             f'<tr class="{"winner" if is_winner else ""}">'
             f"<td>{escape(item['chunking'])}</td>"
             f"<td>{escape(label)}{tag}</td>"
-            f"<td>{item['hits']}/{item['total']}</td>"
-            f"<td>{item['mrr']:.3f}</td>"
+            f'<td class="num">{item["hits"]}/{item["total"]}</td>'
+            f'<td class="num">{item["mrr"]:.3f}</td>'
             "</tr>"
         )
     return "\n".join(body)
@@ -120,10 +118,17 @@ def table_rows(saved: dict) -> str:
 
 def stats_line(saved: dict) -> str:
     answers = saved["answers"]
-    return (
+    line = (
         f"Cited answers kept {answers['in_scope_cited']} of {answers['in_scope_total']} "
         f"in-scope replies. Refusals held on {answers['refusals_kept']} of {answers['refusals_total']}."
     )
+    judge = answers.get("judge", {}).get("in_scope")
+    if judge:
+        line += (
+            f" A judge scored those shipped answers {judge['accuracy']:.2f} for accuracy, "
+            f"{judge['completeness']:.2f} for completeness, and {judge['relevance']:.2f} for relevance, out of 5."
+        )
+    return line
 
 
 def render_home(saved: dict | None = None) -> str:
@@ -140,10 +145,19 @@ def render_home(saved: dict | None = None) -> str:
 def render_project(ask_html: str, saved: dict | None = None) -> str:
     saved = load_results() if saved is None else saved
     page = PROJECT_TEMPLATE.read_text(encoding="utf-8")
+    winner = saved["winner"]
+    answers = saved["answers"]
     return (
         page.replace("{{rows}}", table_rows(saved))
         .replace("{{stats}}", escape(stats_line(saved)))
         .replace("{{ask}}", ask_html)
+        .replace("{{hits}}", str(winner["hits"]))
+        .replace("{{total}}", str(winner["total"]))
+        .replace("{{mrr}}", f"{winner['mrr']:.3f}")
+        .replace("{{cited_total}}", str(answers["in_scope_total"]))
+        .replace("{{cited}}", str(answers["in_scope_cited"]))
+        .replace("{{refusals_total}}", str(answers["refusals_total"]))
+        .replace("{{refusals}}", str(answers["refusals_kept"]))
     )
 
 

@@ -1,0 +1,15 @@
+# Free web service. The ask path calls OpenAI for embeddings and does not load a local model.
+services:
+  - type: web
+    name: ask-my-docs
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.12"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false

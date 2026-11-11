@@ -67,7 +67,7 @@ def saved_llm_rows() -> list[dict]:
 def answer_summary() -> dict:
     saved = json.loads(ANSWER_RESULTS_PATH.read_text(encoding="utf-8"))
     summary = saved["summary"]
-    return {
+    record = {
         "in_scope_cited": summary["in_scope"]["kept"],
         "in_scope_total": summary["in_scope"]["total"],
         "in_scope_misses": summary["in_scope"]["misses"],
@@ -75,6 +75,10 @@ def answer_summary() -> dict:
         "refusals_total": summary["refusals"]["total"],
         "refusal_misses": summary["refusals"]["misses"],
     }
+    judge = summary.get("judge")
+    if judge:
+        record["judge"] = judge
+    return record
 
 
 def winner_record(item: dict) -> dict:
@@ -119,6 +123,14 @@ def main() -> None:
     print(f"\nWinner: {winner['chunking']} / {winner['search']}: {winner['hits']}/{winner['total']}  MRR {winner['mrr']:.3f}")
     print(f"Cited answers: {answers['in_scope_cited']}/{answers['in_scope_total']}")
     print(f"Refusals: {answers['refusals_kept']}/{answers['refusals_total']}")
+    judge = answers.get("judge", {}).get("in_scope")
+    if judge:
+        print(
+            "Judge: "
+            f"accuracy {judge['accuracy']:.2f}  "
+            f"completeness {judge['completeness']:.2f}  "
+            f"relevance {judge['relevance']:.2f}"
+        )
     print(f"Wrote {RESULTS_PATH.name}")
     site_page.build()
     print("Wrote site/")
