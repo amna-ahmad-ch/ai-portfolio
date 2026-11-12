@@ -3,36 +3,156 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ask My Docs | Amna Ahmad</title>
-  <link rel="stylesheet" href="../../styles.css">
+  <title>FoodSafety RAG | Amna Ahmad</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header class="bar">
-    <a class="brand" href="../../">Amna Ahmad</a>
+    <a class="brand" href="/">Amna Ahmad</a>
     <nav>
-      <a href="../../">Projects</a>
+      <a href="/">Projects</a>
       <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
+      <a href="https://www.linkedin.com/in/amna-ahmad-88abbb9b/">LinkedIn</a>
+      <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
     </nav>
   </header>
   <main>
-    <h1>Ask My Docs</h1>
-    <p class="lede">Twelve public-domain food-safety sheets, searched sixteen ways. The winner is LLM chunks reranked by Groq. These are US rules.</p>
-
-    {{ask}}
+    <div class="title-row">
+      <h1>FoodSafety RAG</h1>
+      <a class="go" href="#live-demo">Try it live</a>
+    </div>
+    <p class="summary">FoodSafety RAG is a question-answering app built on 12 US government (USDA) food-safety sheets. I split the sheets four ways (500-character pieces, 1,000-character pieces, by section, and AI-written passages) and searched each with keyword, meaning-based, hybrid (both combined), and reranked search, scoring all of them on 16 questions. How the sheets were split mattered more than how they were searched: AI-written passages with meaning-based search found the right text for {{hits}} of {{total}} questions, and AI reranking lifted the ranking score from {{vector_mrr}} to {{mrr}}. The live app finds the top five passages, has Groq write an answer, and shows it only if it copies a sentence from those passages. Otherwise it says “I don’t know based on these documents.” These are US rules.</p>
 
     <section>
       <h2>Retrieval comparison</h2>
-      <p class="note">{{stats}}</p>
+      <p class="note">This is the comparison in the table. Each question was scored after one split and one search. The rerankers are alternatives, not two steps of the same search.</p>
+      <div class="rail eval">
+        <ol class="pipe">
+          <li>
+            <strong>Documents</strong>
+            <span>12 USDA food-safety sheets</span>
+          </li>
+          <li>
+            <strong>Split</strong>
+            <span>500 characters, 1,000 characters, sections, or AI-written passages</span>
+          </li>
+          <li>
+            <strong>Search</strong>
+            <span>BM25, vector, hybrid, or a reranker</span>
+          </li>
+          <li>
+            <strong>Score</strong>
+            <span>16 questions, hits and ranking score</span>
+          </li>
+        </ol>
+      </div>
+      <p class="note">Each bar shows the best score for one way of splitting. The scale runs from 0 to 1. With only 16 questions, one question is about 6 points. A one-question difference doesn’t mean much.</p>
+      {{chart}}
+      <dl class="defs">
+        <div>
+          <dt>Hits</dt>
+          <dd>Questions where all the key facts appeared in the five passages found.</dd>
+        </div>
+        <div>
+          <dt>MRR (ranking score)</dt>
+          <dd>How high up the right passage appeared. 1.0 means first place every time.</dd>
+        </div>
+      </dl>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Chunks</th><th>Search</th><th class="num">Hits</th><th class="num">MRR</th></tr>
+            <tr><th>Split</th><th>Search</th><th class="num">Hits</th><th class="num">Ranking score</th></tr>
           </thead>
           <tbody>
             {{rows}}
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section id="live-demo">
+      <h2>How the live app works</h2>
+      <p class="summary">Ask a question and the app searches the sheets by keywords and by meaning, then sends the five best passages to Groq to write the answer. The answer is shown only if it copies a sentence from those passages. Otherwise you get “I don’t know based on these documents.”</p>
+      <p class="note">A question on the demo follows this path. There is no reranking step.</p>
+      <div class="rail">
+        <ol class="pipe">
+          <li>
+            <strong>Documents</strong>
+            <span>12 USDA food-safety sheets</span>
+          </li>
+          <li>
+            <strong>Passages</strong>
+            <span>109 AI-written passages</span>
+          </li>
+          <li>
+            <strong>Index</strong>
+            <span>OpenAI embeddings and keywords</span>
+          </li>
+          <li>
+            <strong>Hybrid search</strong>
+            <span>Both combined, top 5, no rerank</span>
+          </li>
+          <li>
+            <strong>Groq writes</strong>
+            <span>An answer from those passages</span>
+          </li>
+          <li class="gate">
+            <strong>Safety check</strong>
+            <span>Must copy a full sentence</span>
+          </li>
+        </ol>
+        <div class="branch" aria-hidden="true"></div>
+        <p class="kept">
+          <strong>Answer with sources</strong>
+          <span>The sentence stays, and the sheet is named</span>
+        </p>
+        <p class="refused">
+          <strong>Refusal</strong>
+          <span>I don’t know based on these documents.</span>
+        </p>
+      </div>
+      <p class="note">The demo is a lighter setup than the best one in the table. That one needs PyTorch, which is too heavy for a free host, so the demo uses OpenAI embeddings plus keyword search, with no reranking.</p>
+      <p class="wake">It runs on Render’s free plan and may take about a minute to wake up.</p>
+      <p>{{try}}</p>
+    </section>
+
+    <section class="failure" id="what-went-wrong">
+      <h2>What went wrong</h2>
+      <p>My safety check kept only {{cited}} of {{cited_total}} correct answers. It only shows an answer that copies a sentence word for word from the source, and the AI often rewords slightly. In the example below, the AI’s answer was right but wrote “<mark>90 °F</mark>” with a space where the source has “<mark>90° F</mark>”. The check rejected it, so the visitor saw “I don’t know.”</p>
+      <p>A separate AI judge scored what visitors saw at about 2.6 out of 5 for accuracy, completeness, and relevance. Most of the loss comes from this strict check, not from wrong answers.</p>
+      <ol>
+        <li>
+          <span>Question</span>
+          How long can perishable food stay out of the refrigerator?
+        </li>
+        <li>
+          <span>Source, leftovers-and-food-safety.md</span>
+          Throw away all perishable foods that have been left in room temperature for more than 2 hours (1 hour if the temperature is over <mark>90° F</mark>, such as at an outdoor picnic during summer).
+        </li>
+        <li>
+          <span>What the AI wrote</span>
+          Throw away all perishable foods that have been left in room temperature for more than 2 hours (1 hour if the temperature is over <mark>90 °F</mark>, such as at an outdoor picnic during summer).
+        </li>
+        <li class="seen">
+          <span>What the visitor saw</span>
+          I don’t know based on these documents.
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Next step</h2>
+      <p class="summary">Have the AI return its answer plus a separate quote, check the quote against the source, and show the answer if the quote matches.</p>
+    </section>
+
+    <section>
+      <h2>Limitations</h2>
+      <ul class="limits">
+        <li>16 questions is a small sample.</li>
+        <li>A question counts as a hit if all its keywords appear anywhere in the five passages. Longer passages give more chances to match. The AI-written passages also include a headline and summary, which can contain the keywords.</li>
+        <li>Matching keywords doesn’t prove a passage answers the question. The AI judge checks the final answer more strictly.</li>
+        <li>I wrote the questions from the same 12 sheets, and I didn’t test on any other documents.</li>
+      </ul>
     </section>
   </main>
 </body>

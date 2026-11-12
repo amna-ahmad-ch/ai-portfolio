@@ -4,27 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amna Ahmad</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header class="bar">
-    <a class="brand" href="./">Amna Ahmad</a>
+    <a class="brand" href="/">Amna Ahmad</a>
     <nav>
       <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
+      <a href="https://www.linkedin.com/in/amna-ahmad-88abbb9b/">LinkedIn</a>
+      <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
     </nav>
   </header>
   <main>
-    <h1>AI engineering, kept in one place.</h1>
-    <p class="lede">Each project stays on this site, with the result on the page.</p>
+    <h1 class="intro">AI engineer. I build AI systems and measure how well they work.</h1>
     <section aria-label="Projects">
-      <a class="feature" href="projects/ask-my-docs/">
-        <div>
-          <h2>Ask My Docs</h2>
-          <p>Twelve public-domain USDA food-safety sheets, searched sixteen ways. The saved evaluation picks one winner.</p>
-          <p class="result">{{hits}} of {{total}} questions found. MRR {{mrr}}.</p>
-        </div>
-        <span class="more">View the comparison</span>
-      </a>
+      <article class="feature">
+        <h2><a href="/projects/ask-my-docs/">FoodSafety RAG</a></h2>
+        <p>A question-answering app over 12 USDA food-safety sheets. It answers only when it can point to a sentence in the sources, and otherwise says “I don’t know.”</p>
+        <p class="stack">Python, Chroma, BM25, OpenAI embeddings, Groq.</p>
+      </article>
     </section>
   </main>
 </body>

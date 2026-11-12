@@ -13,3 +13,7 @@ services:
         sync: false
       - key: GROQ_API_KEY
         sync: false
+      - key: PORTFOLIO_URL
+        value: https://ai-portfolio-2ij.pages.dev/
+      - key: WRITEUP_URL
+        value: https://ai-portfolio-2ij.pages.dev/projects/ask-my-docs/

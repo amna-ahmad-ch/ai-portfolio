@@ -1,6 +1,7 @@
 """Portfolio server for this computer and for Render.
 
-The home page lists projects. Ask My Docs is served with the ask box.
+Locally, the project page is the write-up and /try is the demo.
+On Render, the service root is the demo and links back to the Cloudflare write-up.
 A question uses hybrid search over the LLM chunks. Keyword rank and
 OpenAI vectors are fused, Groq writes the reply, and the citation check
 keeps or replaces it.
@@ -31,6 +32,7 @@ PROJECT_PATHS = {
     "/projects/ask-my-docs/",
     "/projects/ask-my-docs/index.html",
 }
+TRY_PATHS = {"/try", "/try/", "/try/index.html"}
 CONTENT_TYPES = {
     ".html": "text/html; charset=utf-8",
     ".css": "text/css; charset=utf-8",
@@ -82,10 +84,34 @@ class Handler(BaseHTTPRequestHandler):
     def send_json(self, status: int, payload: dict) -> None:
         self.send_bytes(status, "application/json; charset=utf-8", json.dumps(payload).encode("utf-8"))
 
+    def on_render(self) -> bool:
+        return os.environ.get("RENDER") == "true"
+
+    def send_demo(self) -> None:
+        if self.on_render():
+            home = os.environ.get("PORTFOLIO_URL", site_page.PORTFOLIO_URL)
+            writeup = os.environ.get("WRITEUP_URL", site_page.WRITEUP_URL)
+        else:
+            home, writeup = "/", "/projects/ask-my-docs/"
+        page = site_page.render_try(home, writeup).encode("utf-8")
+        self.send_bytes(200, "text/html; charset=utf-8", page)
+
     def do_GET(self) -> None:
         path = self.path.split("?", 1)[0]
+        if path in TRY_PATHS or (path == "/" and self.on_render()):
+            self.send_demo()
+            return
+        if path in {"/", "/index.html"}:
+            page = site_page.render_home("/try").encode("utf-8")
+            self.send_bytes(200, "text/html; charset=utf-8", page)
+            return
         if path in PROJECT_PATHS:
-            page = site_page.render_project(site_page.LOCAL_ASK).encode("utf-8")
+            if self.on_render():
+                self.send_response(302)
+                self.send_header("Location", os.environ.get("WRITEUP_URL", site_page.WRITEUP_URL))
+                self.end_headers()
+                return
+            page = site_page.render_project("/try").encode("utf-8")
             self.send_bytes(200, "text/html; charset=utf-8", page)
             return
         file = site_file(path)

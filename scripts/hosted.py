@@ -267,14 +267,25 @@ def generate(question: str, records: list[dict], pause: bool = True) -> str:
     return message_text(response)
 
 
+def excerpt(text: str) -> str:
+    flat = re.sub(r"\s+", " ", text).strip()
+    if len(flat) <= 280:
+        return flat
+    return flat[:277].rstrip() + "…"
+
+
 def answer_question(index: Index, question: str) -> dict:
     records = ranked_records(index.search(question))
     raw = generate(question, records, pause=False)
-    final, quote, _status = enforce(raw, [record["text"] for record in records])
+    final, quote, status = enforce(raw, [record["text"] for record in records])
     return {
         "answer": final,
         "quote": quote,
-        "sources": [{"rank": record["rank"], "source": record["source_file"]} for record in records],
+        "status": status,
+        "chunks": [
+            {"rank": record["rank"], "source": record["source_file"], "text": excerpt(record["text"])}
+            for record in records
+        ],
     }
 
 
