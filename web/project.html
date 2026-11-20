@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FoodSafety RAG | Amna Ahmad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;0,18..72,600;1,18..72,400;1,18..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -11,9 +14,9 @@
     <a class="brand" href="/">Amna Ahmad</a>
     <nav>
       <a href="/">Projects</a>
+      <a class="mark" href="https://digital-twin-622692985207.asia-south1.run.app/">Digital Twin</a>
       <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
       <a href="https://www.linkedin.com/in/amna-ahmad-88abbb9b/">LinkedIn</a>
-      <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
     </nav>
   </header>
   <main>
@@ -118,7 +121,7 @@
 
     <section class="failure" id="what-went-wrong">
       <h2>What went wrong</h2>
-      <p>My safety check kept only {{cited}} of {{cited_total}} correct answers. It only shows an answer that copies a sentence word for word from the source, and the AI often rewords slightly. In the example below, the AI’s answer was right but wrote “<mark>90 °F</mark>” with a space where the source has “<mark>90° F</mark>”. The check rejected it, so the visitor saw “I don’t know.”</p>
+      <p>My safety check kept only {{cited}} of {{cited_total}} correct answers. It only shows an answer that copies a sentence word for word from the source, and the AI often rewords slightly. In the example below, the AI’s answer was right but wrote “90 °F” with a space where the source has “90° F”. The check rejected it, so the visitor saw “I don’t know.”</p>
       <p>A separate AI judge scored what visitors saw at about 2.6 out of 5 for accuracy, completeness, and relevance. Most of the loss comes from this strict check, not from wrong answers.</p>
       <ol>
         <li>
@@ -127,11 +130,11 @@
         </li>
         <li>
           <span>Source, leftovers-and-food-safety.md</span>
-          Throw away all perishable foods that have been left in room temperature for more than 2 hours (1 hour if the temperature is over <mark>90° F</mark>, such as at an outdoor picnic during summer).
+          Throw away all perishable foods that have been left in room temperature for more than 2 hours (1 hour if the temperature is over 90° F, such as at an outdoor picnic during summer).
         </li>
         <li>
           <span>What the AI wrote</span>
-          Throw away all perishable foods that have been left in room temperature for more than 2 hours (1 hour if the temperature is over <mark>90 °F</mark>, such as at an outdoor picnic during summer).
+          Throw away all perishable foods that have been left in room temperature for more than 2 hours (1 hour if the temperature is over 90 °F, such as at an outdoor picnic during summer).
         </li>
         <li class="seen">
           <span>What the visitor saw</span>
@@ -155,5 +158,8 @@
       </ul>
     </section>
   </main>
+  <footer class="colophon">
+    <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
+  </footer>
 </body>
 </html>

@@ -4,20 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amna Ahmad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;0,18..72,600;1,18..72,400;1,18..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header class="bar">
     <a class="brand" href="/">Amna Ahmad</a>
     <nav>
+      <a class="mark" href="https://digital-twin-622692985207.asia-south1.run.app/">Digital Twin</a>
       <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
       <a href="https://www.linkedin.com/in/amna-ahmad-88abbb9b/">LinkedIn</a>
-      <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
     </nav>
   </header>
   <main>
     <h1 class="intro">AI engineer. I build AI systems and measure how well they work.</h1>
     <section aria-label="Projects">
+      <article class="feature">
+        <h2><a href="/projects/digital-twin/">Digital Twin</a></h2>
+        <p>A chat that answers questions as me, and says so when it doesn’t know.</p>
+        <p class="stack">OpenAI, keyword and semantic search, Supabase.</p>
+      </article>
       <article class="feature">
         <h2><a href="/projects/ask-my-docs/">FoodSafety RAG</a></h2>
         <p>A question-answering app over 12 USDA food-safety sheets. It answers only when it can point to a sentence in the sources, and otherwise says “I don’t know.”</p>
@@ -25,5 +33,8 @@
       </article>
     </section>
   </main>
+  <footer class="colophon">
+    <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
+  </footer>
 </body>
 </html>

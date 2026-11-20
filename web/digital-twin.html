@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Twin | Amna Ahmad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;0,18..72,600;1,18..72,400;1,18..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/">Amna Ahmad</a>
+    <nav>
+      <a href="/">Projects</a>
+      <a class="mark" href="https://digital-twin-622692985207.asia-south1.run.app/">Digital Twin</a>
+      <a href="https://github.com/amna-ahmad-ch/ai-portfolio">GitHub</a>
+      <a href="https://www.linkedin.com/in/amna-ahmad-88abbb9b/">LinkedIn</a>
+    </nav>
+  </header>
+  <main>
+    <div class="title-row">
+      <h1>Digital Twin</h1>
+      <a class="go" href="https://digital-twin-622692985207.asia-south1.run.app/">Try it live</a>
+    </div>
+    <p class="lede">A chat that answers questions as me, and says so when it doesn’t know.</p>
+    <p class="summary">Digital Twin lets anyone ask me questions at any hour. It answers from a written profile and 19 saved FAQs. An exact saved question, including the suggested chips and Q1–Q19, is returned as written and is not sent to the model. Any other question is searched, and only the matching passages go to OpenAI. If those passages do not cover it, the twin says so. Every conversation is saved in an admin inbox, and a message with an email or a request to reach me is flagged for a personal reply.</p>
+
+    <section>
+      <h2>How a question is answered</h2>
+      <div class="rail twin">
+        <ol class="flow">
+          <li class="ask">
+            <strong>Question</strong>
+            <span>Anyone can ask, at any hour</span>
+          </li>
+          <li class="check gate">
+            <strong>Exact saved FAQ?</strong>
+            <span>A chip, the exact question, or Q1–Q19</span>
+          </li>
+          <li class="saved">
+            <strong>Yes. Saved answer</strong>
+            <span>Returned as written. Not sent to the model</span>
+          </li>
+          <li class="search">
+            <strong>No. Profile search</strong>
+            <span>Keywords and meaning. Up to five passages, plus who I am, the accuracy rules, and the voice rules, go to OpenAI</span>
+          </li>
+          <li class="inbox">
+            <strong>Inbox</strong>
+            <span>The twin says when it doesn’t know. The chat is saved, and an email or a request to reach me is flagged</span>
+          </li>
+        </ol>
+      </div>
+      <p class="summary">An exact FAQ match is not sent to the model. A reworded question is. The model can then fetch the matching saved answer with a tool, and it is told to keep that answer.</p>
+      <p class="summary">Unknowns are not guessed. The twin says it does not know and asks for an email. I can read every conversation in the admin inbox and reply there. Messages that include an email, or that ask to reach me, are flagged.</p>
+      <p class="summary">The whole profile is never sent. A model request carries up to five retrieved passages, a short list of the 19 FAQ titles, who I am, the accuracy rules, and the voice rules.</p>
+    </section>
+
+    <section>
+      <h2>What it will not do</h2>
+      <p class="note">The limits matter more than the features, so here they are:</p>
+      <ul class="limits">
+        <li>It is told not to invent employers, dates, project metrics, or other details that are not in the retrieved passages or the 19 answers.</li>
+        <li>Harmful free-text messages are checked by OpenAI moderation and refused before the chat model. Exact saved answers skip that check.</li>
+        <li>Messages over 2,000 characters are cut, and more than 20 messages a minute in one chat are turned away.</li>
+        <li>After 30 AI answers from one address in a day, only exact saved answers still work, including the chips and Q1–Q19. That count lives in the server’s memory and starts over when the server restarts.</li>
+      </ul>
+      <p class="stack">Built with OpenAI (embeddings, chat, and moderation), keyword and semantic search combined, and Supabase for stored conversations.</p>
+      <p><a class="go" href="https://digital-twin-622692985207.asia-south1.run.app/">Open the twin</a></p>
+    </section>
+  </main>
+  <footer class="colophon">
+    <a href="mailto:amna.ahmad.ch@gmail.com">amna.ahmad.ch@gmail.com</a>
+  </footer>
+</body>
+</html>

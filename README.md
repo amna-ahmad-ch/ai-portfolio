@@ -24,6 +24,6 @@ Open http://127.0.0.1:8765. The project page is http://127.0.0.1:8765/projects/a
 
 `OPENAI_API_KEY` and `GROQ_API_KEY` stay in `.env`. Build the OpenAI chunk vectors once with `uv run python scripts/hosted.py --embed`.
 
-The public files in `site/` are rebuilt with `uv run python scripts/site_page.py`. Cloudflare Pages serves that copy: the write-up, with a Try it live button. Render serves the ask box at the service root. Locally the same demo is at http://127.0.0.1:8765/try. The public demo is https://ask-my-docs.onrender.com/ once that service is deployed. Render’s free plan sleeps, so the first visit can take about a minute.
+The public files in `site/` are rebuilt with `uv run python scripts/site_page.py`. Cloudflare Pages serves that copy: the write-up, with a Try it live button. Render serves the ask box at the service root. Locally the same demo is at http://127.0.0.1:8765/try. The public demo is https://ai-portfolio-rpy2.onrender.com/. Render’s free plan sleeps, so the first visit can take about a minute.
 
 Notes for changing the evaluation are in `CONTRIBUTING.md`.
